@@ -42,7 +42,7 @@ function App() {
         decrementBreakLengthByOneMinute={decrementBreakLengthByOneMinute}
         incrementBreakLengthByOneMinute={incrementBreakLengthByOneMinute}
       />
-      <TimeLeft sessionLength={sessionLength} />
+      <TimeLeft breakLength={breakLength} sessionLength={sessionLength} />
       <Session
         sessionLength={sessionLength}
         decrementSessionLengthByOneMinute={decrementSessionLengthByOneMinute}
