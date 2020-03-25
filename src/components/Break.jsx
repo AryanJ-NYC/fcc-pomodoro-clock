@@ -1,23 +1,32 @@
 import moment from 'moment';
 import React from 'react';
+import {
+  BreakSessionContainer,
+  BreakSessionLabel,
+  BreakSessionTime,
+  PlusMinusButtonContainer,
+  PlusMinusButton,
+} from '../ui/BreakSessionUi';
 
 const Break = ({
   breakLength,
   decrementBreakLengthByOneMinute,
   incrementBreakLengthByOneMinute,
 }) => {
-  const breakLengthInMinutes = moment.duration(breakLength, 's').minutes();
+  const breakLengthInMinutes = moment.duration(breakLength, 's').asMinutes();
   return (
-    <div>
-      <p id="break-label">Break</p>
-      <p id="break-length">{breakLengthInMinutes}</p>
-      <button id="break-decrement" onClick={decrementBreakLengthByOneMinute}>
-        -
-      </button>
-      <button id="break-increment" onClick={incrementBreakLengthByOneMinute}>
-        +
-      </button>
-    </div>
+    <BreakSessionContainer>
+      <BreakSessionLabel id="break-label">Break</BreakSessionLabel>
+      <BreakSessionTime id="break-length">{breakLengthInMinutes}</BreakSessionTime>
+      <PlusMinusButtonContainer>
+        <PlusMinusButton id="break-decrement" onClick={decrementBreakLengthByOneMinute}>
+          -
+        </PlusMinusButton>
+        <PlusMinusButton id="break-increment" onClick={incrementBreakLengthByOneMinute}>
+          +
+        </PlusMinusButton>
+      </PlusMinusButtonContainer>
+    </BreakSessionContainer>
   );
 };
 
