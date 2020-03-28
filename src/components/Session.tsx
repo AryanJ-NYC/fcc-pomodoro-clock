@@ -8,7 +8,7 @@ import {
   PlusMinusButton,
 } from '../ui/BreakSessionUi';
 
-const Session = ({
+const Session: React.FC<Props> = ({
   sessionLength,
   decrementSessionLengthByOneMinute,
   incrementSessionLengthByOneMinute,
@@ -28,6 +28,12 @@ const Session = ({
       </PlusMinusButtonContainer>
     </BreakSessionContainer>
   );
+};
+
+type Props = {
+  sessionLength: number;
+  decrementSessionLengthByOneMinute: () => void;
+  incrementSessionLengthByOneMinute: () => void;
 };
 
 export default Session;

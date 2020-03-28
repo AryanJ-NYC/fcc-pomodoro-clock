@@ -8,7 +8,7 @@ import {
   PlusMinusButton,
 } from '../ui/BreakSessionUi';
 
-const Break = ({
+const Break: React.FC<Props> = ({
   breakLength,
   decrementBreakLengthByOneMinute,
   incrementBreakLengthByOneMinute,
@@ -29,5 +29,11 @@ const Break = ({
     </BreakSessionContainer>
   );
 };
+
+type Props = {
+  breakLength: number
+  decrementBreakLengthByOneMinute: () => void
+  incrementBreakLengthByOneMinute: () => void
+}
 
 export default Break;
